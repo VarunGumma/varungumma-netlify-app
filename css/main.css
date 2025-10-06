@@ -274,6 +274,65 @@ html.beamer h4 {
     transform: translateY(-1px);
 }
 
+/* Fixed sidebar social icons */
+.social-icons-sidebar {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    z-index: 100;
+}
+
+.social-icons-sidebar a {
+    color: var(--fg);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons-sidebar a:hover {
+    color: var(--brand);
+    transform: translateX(-3px);
+}
+
+/* Hide sidebar on tablets and mobile */
+@media (max-width: 1024px) {
+    .social-icons-sidebar {
+        display: none !important;
+    }
+}
+
+/* Show horizontal social icons below content on mobile */
+.social-icons-mobile {
+    display: none;
+    justify-content: center;
+    gap: 24px;
+    margin: var(--space-6) 0;
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.social-icons-mobile a {
+    color: var(--fg);
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons-mobile a:hover {
+    color: var(--brand);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .social-icons-mobile {
+        display: flex !important;
+    }
+}
+
 .fab.fa-twitter {
     font-family: sans-serif
 }
