@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  # Use esbuild for faster, ESM-friendly bundles and keep @netlify/blobs external.
+  node_bundler = "esbuild"
+  external_node_modules = ["@netlify/blobs"]
+
+[build.environment]
+  # Pin a Netlify-supported Node version for Functions/runtime compatibility.
+  NODE_VERSION = "20"
