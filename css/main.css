@@ -979,3 +979,15 @@ table tr td :last-child {
         text-align: center;
     }
 }
+
+.visitor-counter {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.visitor-counter .visitor-value {
+    font-weight: 600;
+}

@@ -710,13 +710,18 @@
     <img src="images/yiyi.png" alt="Decorative illustration"
         style="position: fixed; bottom: 12px; right: 12px; width: 80px; height: auto; opacity: 0.85;">
 
-    <footer>
-        <div class="container" style="text-align:center; padding: 12px 0 20px; color: inherit;">
-            <small class="footer-note">&copy; <span data-current-year></span> Varun Gumma. All rights reserved.</small>
+<footer>
+    <div class="container" style="text-align:center; padding: 12px 0 20px; color: inherit;">
+        <small class="footer-note">&copy; <span data-current-year></span> Varun Gumma. All rights reserved.</small>
+        <div class="visitor-counter" aria-live="polite" aria-label="Unique visitor count">
+            Visitors: <span class="visitor-value" data-visitor-count>—</span>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script>
+<script src="visitor.js" defer></script>
+
+<script>
         (function () {
             var btn = document.getElementById('theme-toggle');
             if (!btn) return;
