@@ -723,6 +723,8 @@ table tr td :last-child {
     display: block;
     color: var(--muted);
     margin-top: 4px;
+    font-family: "Computer Modern Sans", "CMU Sans Serif", "Latin Modern Sans", var(--font-sans);
+    font-weight: 450;
 }
 
 .credits {

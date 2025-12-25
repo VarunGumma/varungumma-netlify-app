@@ -31,11 +31,20 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    .container.content :where(p, li) {
+      font-family: "Computer Modern Sans", "CMU Sans Serif", "Latin Modern Sans", sans-serif;
+      font-size: 17px;
+      font-weight: 450;
+    }
+  </style>
 
 
   <!-- Facebook Open Graph -->
@@ -128,56 +137,66 @@
         research, have suggestions or just want to chat, especially about Ph.D./MS opportunities and the applications
         cycle. <i>(Just released a blogpost on it!)</i></p>
 
-      <h2 id="news">News</h2>
+      <section class="blog-intro" aria-labelledby="news">
+        <div class="blog-intro-inner">
+          <h2 id="news">News</h2>
 
-      <ul class="news-list" aria-label="Recent updates">
-        <li>
-          <p><strong>2025-09-26</strong>: 📜 Preprint of my final work at MSRI, <a
-              href="https://arxiv.org/abs/2509.21294">The Role of Synthetic Data in Multilingual,
-              Multi-Cultural AI Systems: Lessons from Indic Languages</a>, is live!
-        </li>
-        <li>
-          <p><strong>2025-08-11</strong>: ▶️ Started my Ph.D at Nanyang Technological University @ School of EEE!</p>
-        </li>
-        <li>
-          <p><strong>2025-08-18</strong>: ⏹️ Completed my stint at Microsoft Research India! Grateful to all
-            collaborators!</p>
-        </li>
-        <li>
-          <p><strong>2025-04-29</strong>: 📜 <a href="https://aclanthology.org/2025.naacl-long.366/">Towards Inducing
-              Document-Level
-              Abilities in MNMT Systems</a> has been accepted at
-            NAACL 2025!
-        </li>
-        <li>
-          <p><strong>2024-11-10</strong>: ✈️ Attending EMNLP 2024 at Miami, Florida to present our work, <a
-              href="https://aclanthology.org/2024.emnlp-main.451/">Pariksha</a>.</p>
-        </li>
-        <li>
-          <p><strong>2024-10-21</strong>: 📜 The Report on Contamination of Multilingual Benchmarks has been accepted at
-            EvalEval @ NEURIPS 2024. The
-            <a href="https://arxiv.org/abs/2410.16186">preprint</a> is live!
-          </p>
-        </li>
-        <li>
-          <p><strong>2024-10-18</strong>: 📜 Preprint of <a href="https://arxiv.org/abs/2410.13671">Health-Pariksha</a>
-            is online. Do check it out, and more models are on the way! Also, an updated version of <a
-              href="https://arxiv.org/abs/2408.11382">Towards Inducing Document-Level Abilities in MNMT Systems</a> is
-            online, with an improved name, write up, evaluation set and <a
-              href="https://github.com/VarunGumma/fairseq">framework</a>.</p>
-        </li>
-        <li>
-          <p><strong>2024-08-10</strong>: ✈️ Attending ACL 2024 at Bangkok, Thailand (my first ever conference 🎉).</p>
-        </li>
-        <li>
-          <p><strong>2023-07-31</strong>: ↪️ Converted from Intern to SCAI Center Fellow at Microsoft Research
-            India</a>.
-          </p>
-        </li>
-        <li>
-          <p><strong>2023-05-22</strong>: ▶️ Started my Internship at Microsoft Research India.</p>
-        </li>
-      </ul>
+          <ul class="news-list" aria-label="Recent updates">
+            <li>
+              <p><strong>2025-09-26</strong>: 📜 Preprint of my final work at MSRI, <a
+                  href="https://arxiv.org/abs/2509.21294">The Role of Synthetic Data in Multilingual,
+                  Multi-Cultural AI Systems: Lessons from Indic Languages</a>, is live!
+            </li>
+            <li>
+              <p><strong>2025-08-11</strong>: ▶️ Started my Ph.D at Nanyang Technological University @ School of EEE!
+              </p>
+            </li>
+            <li>
+              <p><strong>2025-08-18</strong>: ⏹️ Completed my stint at Microsoft Research India! Grateful to all
+                collaborators!</p>
+            </li>
+            <li>
+              <p><strong>2025-04-29</strong>: 📜 <a href="https://aclanthology.org/2025.naacl-long.366/">Towards
+                  Inducing
+                  Document-Level
+                  Abilities in MNMT Systems</a> has been accepted at
+                NAACL 2025!
+            </li>
+            <li>
+              <p><strong>2024-11-10</strong>: ✈️ Attending EMNLP 2024 at Miami, Florida to present our work, <a
+                  href="https://aclanthology.org/2024.emnlp-main.451/">Pariksha</a>.</p>
+            </li>
+            <li>
+              <p><strong>2024-10-21</strong>: 📜 The Report on Contamination of Multilingual Benchmarks has been
+                accepted at
+                EvalEval @ NEURIPS 2024. The
+                <a href="https://arxiv.org/abs/2410.16186">preprint</a> is live!
+              </p>
+            </li>
+            <li>
+              <p><strong>2024-10-18</strong>: 📜 Preprint of <a
+                  href="https://arxiv.org/abs/2410.13671">Health-Pariksha</a>
+                is online. Do check it out, and more models are on the way! Also, an updated version of <a
+                  href="https://arxiv.org/abs/2408.11382">Towards Inducing Document-Level Abilities in MNMT Systems</a>
+                is
+                online, with an improved name, write up, evaluation set and <a
+                  href="https://github.com/VarunGumma/fairseq">framework</a>.</p>
+            </li>
+            <li>
+              <p><strong>2024-08-10</strong>: ✈️ Attending ACL 2024 at Bangkok, Thailand (my first ever conference 🎉).
+              </p>
+            </li>
+            <li>
+              <p><strong>2023-07-31</strong>: ↪️ Converted from Intern to SCAI Center Fellow at Microsoft Research
+                India</a>.
+              </p>
+            </li>
+            <li>
+              <p><strong>2023-05-22</strong>: ▶️ Started my Internship at Microsoft Research India.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
 
       <hr />
 
@@ -188,7 +207,7 @@
         <p style="margin: 2px 0; text-align: center;"><a href="https://kabirahuja2431.github.io/">Website and CV
             template shamelessly copied from Kabir Ahuja</a></p>
         <p style="margin: 2px 0; text-align: center;"><a href="https://github.com/features/copilot">Website designed and
-            developed by GPT-5 & Claude Sonnet-4 (GitHub Copilot)</a></p>
+            developed by GitHub Copilot</a></p>
       </div>
 
     </div>
