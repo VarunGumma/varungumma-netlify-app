@@ -10,9 +10,9 @@
     --brand-700: #4338ca;
     --border: rgba(0, 0, 0, 0.08);
     --radius: 10px;
-    --font-serif: "Libre Baskerville", Georgia, "Times New Roman", Times, serif;
-    --font-sans: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-heading: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: "Source Serif 4", Georgia, "Times New Roman", Times, serif;
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-heading: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-mono: "CMU Typewriter Text", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     --space-1: 4px;
     --space-2: 8px;
@@ -21,6 +21,32 @@
     --space-5: 24px;
     --space-6: 32px;
     --space-7: 48px;
+}
+
+/* ── Page glow gradient ── */
+.page-glow {
+    position: fixed;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 340px;
+    background: radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--brand) 18%, transparent), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    animation: glowPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+    0% {
+        opacity: 0.45;
+        transform: translateX(-50%) scale(1);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: translateX(-50%) scale(1.08);
+    }
 }
 
 [data-theme="dark"] {
@@ -57,6 +83,7 @@ a {
     color: var(--brand);
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.25s ease;
 }
 
 a:hover {
@@ -152,6 +179,30 @@ html.beamer h4 {
     font-weight: 500;
     letter-spacing: 0.02em;
     text-transform: none;
+    position: relative;
+    text-decoration: none;
+}
+
+#navlist a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: var(--brand);
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#navlist a:hover::after {
+    transform: scaleX(1);
+}
+
+#navlist a:hover {
+    text-decoration: none;
 }
 
 .navbar {
@@ -184,7 +235,7 @@ html.beamer h4 {
 }
 
 .container {
-    max-width: 780px;
+    max-width: 920px;
     margin: auto;
     padding: 0 var(--space-4);
 }
@@ -271,7 +322,7 @@ html.beamer h4 {
 
 .social-icons a:hover {
     color: var(--brand);
-    transform: translateY(-1px);
+    transform: translateY(-3px);
 }
 
 /* Fixed sidebar social icons */
@@ -289,12 +340,46 @@ html.beamer h4 {
 .social-icons-sidebar a {
     color: var(--fg);
     text-decoration: none;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: color 0.25s ease, transform 0.25s ease;
+    opacity: 0;
+    animation: sidebarSlideIn 0.5s ease forwards;
+}
+
+.social-icons-sidebar a:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.social-icons-sidebar a:nth-child(2) {
+    animation-delay: 0.42s;
+}
+
+.social-icons-sidebar a:nth-child(3) {
+    animation-delay: 0.54s;
+}
+
+.social-icons-sidebar a:nth-child(4) {
+    animation-delay: 0.66s;
+}
+
+.social-icons-sidebar a:nth-child(5) {
+    animation-delay: 0.78s;
+}
+
+@keyframes sidebarSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .social-icons-sidebar a:hover {
     color: var(--brand);
-    transform: translateX(-3px);
+    transform: translateX(-4px) scale(1.15);
 }
 
 /* Hide sidebar on tablets and mobile */
@@ -342,8 +427,18 @@ html.beamer h4 {
     font-size: 1.2em
 }
 
+.content a {
+    background-image: linear-gradient(var(--brand), var(--brand));
+    background-size: 0% 1.5px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease;
+    text-decoration: none;
+}
+
 .content a:hover {
-    text-decoration: underline
+    background-size: 100% 1.5px;
+    text-decoration: none;
 }
 
 .content ol {
@@ -377,6 +472,15 @@ html.beamer h4 {
 
 .news-list li {
     margin-bottom: var(--space-2);
+    border-left: 3px solid transparent;
+    padding-left: var(--space-2);
+    transition: border-color 0.3s ease, background 0.3s ease;
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.news-list li:hover {
+    border-left-color: var(--brand);
+    background: color-mix(in srgb, var(--brand) 5%, transparent);
 }
 
 .news-list::-webkit-scrollbar {
@@ -429,8 +533,24 @@ html.beamer h4 {
     border-radius: 50%;
     object-fit: cover;
     object-position: var(--profile-object-position, 50% 0%);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 0 0 3px color-mix(in srgb, var(--brand) 20%, transparent);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+    animation: profileGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes profileGlow {
+    0% {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 0 0 3px color-mix(in srgb, var(--brand) 15%, transparent);
+    }
+
+    100% {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 0 0 6px color-mix(in srgb, var(--brand) 30%, transparent);
+    }
+}
+
+.content .profile-picture:hover {
+    transform: scale(1.07);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12), 0 0 0 5px color-mix(in srgb, var(--brand) 35%, transparent);
 }
 
 p .content .profile-picture {
@@ -514,11 +634,12 @@ table tr td :last-child {
     margin-bottom: 20px;
     padding: var(--space-4);
     border: 1px solid var(--border);
+    border-left: 3px solid transparent;
     border-radius: var(--radius);
     background: var(--bg);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
     transform: translateY(0);
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    transition: box-shadow 0.5s cubic-bezier(0.2, 0, 0, 1), transform 0.4s cubic-bezier(0.2, 0, 0, 1), border-color 0.4s ease, background 0.4s ease;
 }
 
 .publication h4 {
@@ -553,8 +674,14 @@ table tr td :last-child {
 }
 
 .publication:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 0 20px 4px color-mix(in srgb, var(--brand) 15%, transparent);
+    transform: translateY(-3px);
+    border-left-color: var(--brand);
+    background: color-mix(in srgb, var(--brand) 3%, var(--bg));
+}
+
+[data-theme="dark"] .publication:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 24px 6px color-mix(in srgb, var(--brand) 22%, transparent);
 }
 
 .pub-meta {
@@ -680,13 +807,14 @@ table tr td :last-child {
     border: 1px solid var(--brand);
     border-radius: 999px;
     background: color-mix(in srgb, var(--brand) 8%, transparent);
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .btn:hover {
     background-color: var(--brand);
     color: var(--bg);
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.06);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--brand) 25%, transparent);
 }
 
 .btn-outline-primary {
@@ -711,19 +839,25 @@ table tr td :last-child {
 }
 
 .theme-toggle:hover {
-    transform: translateY(-1px);
+    transform: translateY(-1px) rotate(15deg);
     background: color-mix(in srgb, var(--brand) 10%, transparent);
 }
 
 .theme-toggle i {
     font-size: 14px;
+    display: inline-block;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle.spin i {
+    transform: rotate(360deg);
 }
 
 .footer-note {
     display: block;
     color: var(--muted);
     margin-top: 4px;
-    font-family: "Computer Modern Sans", "CMU Sans Serif", "Latin Modern Sans", var(--font-sans);
+    font-family: var(--font-sans);
     font-weight: 450;
 }
 
@@ -744,8 +878,8 @@ table tr td :last-child {
 /* Section reveal animation */
 .reveal {
     opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 600ms ease, transform 600ms ease;
+    transform: translateY(18px);
+    transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal.visible {
