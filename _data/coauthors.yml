@@ -1,0 +1,5 @@
+# Maps co-author names to homepages; al-folio links them in the bibliography.
+# Format:
+#   "lastname":
+#     - firstname: ["First", "F."]
+#       url: https://example.com

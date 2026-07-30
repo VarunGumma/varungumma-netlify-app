@@ -1,0 +1,13 @@
+[build]
+  publish = "_site"
+  command = "bundle exec jekyll build"
+
+[build.environment]
+  RUBY_VERSION = "3.4.1"
+  JEKYLL_ENV = "production"
+
+# Jekyll writes no 404 route of its own; al-folio ships _pages/404.md
+[[redirects]]
+  from = "/*"
+  status = 404
+  to = "/404.html"
