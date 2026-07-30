@@ -8,9 +8,6 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>School of EEE @ NTU</p>
-    <p>Singapore</p>
 
 selected_papers: false # publications live on the publications page only
 social: false # socials now live in the navbar (enable_navbar_social)
@@ -29,6 +26,14 @@ announcements:
   .news .table-responsive {
     max-height: 22rem !important;
     overflow-y: auto;
+  }
+
+  /* Justify the bio copy. Hyphenation keeps justified text from opening up
+     large word gaps at this column width. */
+  .clearfix p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
   }
 </style>
 

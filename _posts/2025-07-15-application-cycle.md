@@ -7,15 +7,27 @@ giscus_comments: false
 related_posts: false
 toc:
   sidebar: left
----
-
-<style>
-  .post .post-content p {
+_styles: >
+  .post .post-content p,
+  .post .post-content li {
     text-align: justify;
     text-justify: inter-word;
     hyphens: auto;
   }
-</style>
+
+  /* The layout always prints the date and a year archive link under the
+     title; drop both and rule off the header instead. */
+  .post-header .post-meta,
+  .post-header .post-tags {
+    display: none;
+  }
+
+  .post-header {
+    border-bottom: 1px solid var(--global-divider-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.75rem;
+  }
+---
 
 ## Introduction
 
@@ -35,7 +47,7 @@ More often than not, you may find yourself at a fork in the road where you want 
 
 In rare cases, when you want to switch domains, you need to be extra careful. Principal Investigators (PIs) usually prefer to hire students who already have some experience in their research area and can quickly adapt to the lab's pace. However, making such a transition is not impossible. There have been several cases where students have been recruited into new domains (including myself). You need to structure your SoP (and LoR) to convince the professor that you can learn their domain quickly and connect it to your existing fundamentals. It is best to familiarize yourself with the PI's recent publications and discuss in your statement how you can build on and improve their work. This helps give the PI confidence that they will not need to spend too much time teaching you the basics of their research. Your statement should also clearly highlight other technical skills and experiences that you can leverage to support such a transition.
 
-I understand this might lead you to think, _“Should I tailor my SoP to fit the PI's domain, or should I focus on describing my own work and ideas?”_ Often, professors—especially newer ones—are open to letting their students bring their own topics and work on them independently. However, established research groups with defined goals and funding may be more restrictive. Therefore, choose your PIs carefully based on your intentions. If you are strongly inclined to work with a specific PI, focus on their research and build your statement around it. But if you wish to explore and apply more broadly, go with the latter approach. The former can be slightly risky since your target space becomes smaller and other PIs may not connect with your proposal. That said, I have had friends who succeeded with both approaches.
+I understand this might lead you to think, _“Should I tailor my SoP to fit the PI's domain, or should I focus on describing my own work and ideas?”_ Often, professors—especially newer ones—are open to letting their students bring their own topics and work on them independently. However, established research groups with defined goals and funding may be more restrictive. Therefore, choose your PIs carefully based on your intentions. If you are strongly inclined to work with a specific PI, focus on their research and build your statement around it. But if you wish to explore and apply more broadly, go with the latter approach. The former can also be slightly risky since your target space becomes smaller and other PIs may not connect with your proposal. That said, I have had friends who succeeded with both approaches.
 
 Most SoPs end with a concluding paragraph where students are expected to mention why they are applying to a particular university and specific professors. Keep this section concise and to the point, and avoid spending too many words on it. Many students use a template where the technical content remains the same across SoPs for different universities and only the final paragraph is changed. Although this may save time, such forced stitching can break the flow for the reader. The biggest mistake one can make here is forgetting to update the university or professors' names in a rush (for example, applying to Harvard but leaving the last paragraph mentioning Stanford). Yes, this happens more often than you'd think! Although it may not look good, don't worry if this occurs—the admissions committee routes your application package to the relevant PIs. Every application process typically requires you to list 3-5 professors on the university's website when filling out your details. However, the best and most effective approach is to write separate SoPs for each university, focusing on their PIs and core research areas while uniquely connecting your work to theirs. It may feel like a lot of effort when you are applying to 15-16 universities, but no pain, no gain! 
 
@@ -101,7 +113,7 @@ A CV serves as a quick introduction to you, your background, and your achievemen
 
 ## Safe Schools
 
-A big mistake I made during my application cycle was not applying to safe schools. Safe schools are those universities where you are almost certain to get an admit, either because of your relatively strong profile or a prior understanding with a professor. Given the competition in AI and NLP, I strongly suggest maintaining a balanced gradient in your applications—around 20 percent top schools, 40–50 percent mid-range, and 30–40 percent safe schools. You can adjust this ratio based on discussions with your mentors or seniors who can help assess your profile. Applying only to top schools can be extremely risky due to their high standards and intense competition, which lowers your chances of admission. If you are absolutely sure you will be rejected by a particular university, do not waste your time, effort, and money applying there. Instead, focus on mid-range or safe schools. After all, your main goal should be to secure a shortlist or interview call.
+A big mistake I made during my application cycle was not applying to safe schools. Safe schools are those universities where you are almost certain to get an admit, either because of your relatively strong profile or a prior understanding with a professor. Given the competition in AI and NLP, I strongly suggest maintaining a balanced gradient in your applications—around 20% top schools, 40–50% mid-range, and 30–40% safe schools. You can adjust this ratio based on discussions with your mentors or seniors who can help assess your profile. Applying only to top schools can be extremely risky due to their high standards and intense competition, which lowers your chances of admission. If you are absolutely sure you will be rejected by a particular university, do not waste your time, effort, and money applying there. Instead, focus on mid-range or safe schools. After all, your main goal should be to secure a shortlist or interview call.
 
 Formally, any sort of _preference_ or _bias_ you introduce into your application process will narrow your sample space and, in turn, reduce your number of successful outcomes. MS and PhD applications are, to some extent, a game of probability. Suppose you have a success probability of _p_. If you apply to _N_ schools, you can expect to receive offers from _Np_ universities. Therefore, if you reduce _N_ , your expected number of admits will also decrease.
 
