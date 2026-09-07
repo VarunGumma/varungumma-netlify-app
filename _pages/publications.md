@@ -5,11 +5,7 @@ title: publications
 description:
 nav: true
 nav_order: 2
----
-
-<!-- _pages/publications.md -->
-
-<style>
+_styles: >
   /* al-folio marks the site author with <em> (italic). Make it bold and
      theme-coloured so it stands out in a long author list. */
   .publications .author em {
@@ -25,11 +21,7 @@ nav_order: 2
     font-size: 0.95em;
     vertical-align: -0.05em;
   }
-</style>
-
-<!-- Bibsearch Feature -->
-
-{% include bib_search.liquid %}
+---
 
 <div class="publications">
 
